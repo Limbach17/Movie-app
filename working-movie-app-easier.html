@@ -53,14 +53,28 @@
           console.log(response);
 
           // Creates a div to hold the movie
-          $("#movies-view").append("<div id='newMovie'></div>");
+          $("#movies-view").prepend("<div id='newMovie'></div>");
           // Retrieves the Rating Data
           // Creates an element to have the rating displayed
-          $("newMovie").append("<div id='rating'></div>");
+          $("#newMovie").append("<div id='rating'></div>");
+          $("#newMovie").append("<div id='year'></div>");
+          $("#newMovie").append("<div id='plot'></div>");
+          $("#newMovie").append("<img id='poster'>");
           // Displays the rating
           $("#rating").text(JSON.stringify(response.Rated));
           console.log(response.Rated);
+          $("#year").text(JSON.stringify(response.Released));
+          console.log(response.Released);
+          $("#plot").text(JSON.stringify(response.Plot));
+          console.log(response.Plot);
+          
+          $("#poster").attr("src", response.Poster);
+
+
+
+
           // Retrieves the release year
+          
 
           // Creates an element to hold the release year
           // Displays the release year
